@@ -1,33 +1,55 @@
-﻿@model SimpleERP.Models.Usuario
+﻿@model SimpleERP.ViewModels.UsuarioViewModel
 
 @{
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
+<h1>Criar novo usuário</h1>
 
-<h4>Usuario</h4>
 <hr />
 <div class="row">
     <div class="col-md-4">
         <form asp-action="Create">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
             <div class="form-group">
                 <label asp-for="Nome" class="control-label"></label>
-                <input asp-for="Nome" class="form-control" />
+                <input asp-for="Nome" class="form-control  placeholder="Nome completo" />
                 <span asp-validation-for="Nome" class="text-danger"></span>
             </div>
+            <br />
+
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" placeholder="Example@gmail.com" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <br />
+
+            <div class="form-group">
+                <label asp-for="Telefone" class="control-label"></label>
+                <input asp-for="Telefone" class="form-control" placeholder="(27)996312085"/>
+                <span asp-validation-for="Telefone" class="text-danger"></span>
+                <small class="form-text text-muted">
+                    Digite apenas números: DDD + telefone (9 dígitos). 
+                </small>
+
+            </div>
+            <br />
+
             <div class="form-group">
                 <input type="submit" value="Create" class="btn btn-primary" />
             </div>
         </form>
     </div>
 </div>
-
+<br></br>
 <div>
-    <a asp-action="Index">Back to List</a>
+    <input type="submit" value="Voltar para Lista" class="btn btn-primary" a asp-action="Index" />
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

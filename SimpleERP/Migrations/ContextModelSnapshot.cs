@@ -21,6 +21,37 @@ namespace SimpleERP.Migrations
 
             MySqlModelBuilderExtensions.AutoIncrementColumns(modelBuilder);
 
+            modelBuilder.Entity("SimpleERP.Models.Produto", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasColumnName("id");
+
+                    MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Descricao")
+                        .HasColumnType("longtext")
+                        .HasColumnName("Descricao");
+
+                    b.Property<string>("Nome")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Nome");
+
+                    b.Property<int>("Quantidade")
+                        .HasColumnType("int")
+                        .HasColumnName("Quantidade");
+
+                    b.Property<decimal>("Valor")
+                        .HasColumnType("decimal(65,30)")
+                        .HasColumnName("valor");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Produto");
+                });
+
             modelBuilder.Entity("SimpleERP.Models.Usuario", b =>
                 {
                     b.Property<int>("Id")
@@ -30,9 +61,21 @@ namespace SimpleERP.Migrations
 
                     MySqlPropertyBuilderExtensions.UseMySqlIdentityColumn(b.Property<int>("Id"));
 
+                    b.Property<string>("Email")
+                        .IsRequired()
+                        .HasColumnType("longtext")
+                        .HasColumnName("Email");
+
                     b.Property<string>("Nome")
+                        .IsRequired()
                         .HasColumnType("longtext")
                         .HasColumnName("Nome");
+
+                    b.Property<string>("Telefone")
+                        .IsRequired()
+                        .HasMaxLength(13)
+                        .HasColumnType("varchar(13)")
+                        .HasColumnName("Telefone");
 
                     b.HasKey("Id");
 

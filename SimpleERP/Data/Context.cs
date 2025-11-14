@@ -8,6 +8,9 @@ namespace SimpleERP.Data
         public Context(DbContextOptions<Context> options) : base(options)
         {
         }
-        public DbSet<Usuario> Usuario { get; set; } 
+        public DbSet<Usuario> Usuario { get; set; }
+
+        public DbSet<SimpleERP.Models.Produto> Produto { get; set; } = default!;
+
     }
 }
