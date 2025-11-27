@@ -15,7 +15,7 @@ namespace SimpleERP.Models
 
         [Display(Name = "Nome do produto")]
         [Column("Nome")]
-        public string Nome{ get; set; }
+        public string NomeProduto{ get; set; }
         
         [Display(Name = "Valor do produto")]
         [Column("valor")]
@@ -24,6 +24,7 @@ namespace SimpleERP.Models
         [Display(Name = "descrição do produto")]
         [Column("Descricao")]
         public string? Descricao { get; set; }
+
         [Display(Name = "quantidade do produto")]
         [Column("Quantidade")]
         public int Quantidade { get; set; }
