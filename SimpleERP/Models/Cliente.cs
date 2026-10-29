@@ -11,8 +11,8 @@ namespace SimpleERP.Models
         public int Id { get; set; }
         public int NomeCompletoCliente { get; set; }
         public int CpfCnpj { get; set; }
-        public string Endereco { get; set; }
-        public string Ie { get; set; }
+        public string Endereco { get; set; } = string.Empty;
+        public string Ie { get; set; } = string.Empty;
 
     }
 }

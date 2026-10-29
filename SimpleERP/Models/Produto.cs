@@ -15,17 +15,17 @@ namespace SimpleERP.Models
 
         [Display(Name = "Nome do produto")]
         [Column("Nome")]
-        public string NomeProduto{ get; set; }
+        public string Nome{ get; set; } = string.Empty;
         
         [Display(Name = "Valor do produto")]
         [Column("valor")]
         public decimal Valor{ get; set; }
 
-        [Display(Name = "descrição do produto")]
+        [Display(Name = "Descrição do produto")]
         [Column("Descricao")]
         public string? Descricao { get; set; }
 
-        [Display(Name = "quantidade do produto")]
+        [Display(Name = "Quantidade do produto")]
         [Column("Quantidade")]
         public int Quantidade { get; set; }
     }
