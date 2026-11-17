@@ -1,0 +1,47 @@
+@{
+    var currentController = ViewContext.RouteData.Values["controller"]?.ToString();
+
+    var painelAtivo = currentController == "Home" ? "is-active" : "";
+    var produtosAtivo = currentController == "Produtos" ? "is-active" : "";
+    var usuariosAtivo = currentController == "Usuarios" ? "is-active" : "";
+}
+
+<aside class="app-sidebar" id="appSidebar">
+    <a class="app-sidebar__brand"
+       asp-controller="Home"
+       asp-action="Index">
+        SimpleERP
+    </a>
+
+    <nav class="app-sidebar__nav" aria-label="Navegação principal">
+        <div class="app-sidebar__group">
+            <span class="app-sidebar__group-title">Principal</span>
+
+            <a class="app-sidebar__link @painelAtivo"
+               asp-controller="Home"
+               asp-action="Index">
+                Painel
+            </a>
+        </div>
+
+        <div class="app-sidebar__group">
+            <span class="app-sidebar__group-title">Cadastros</span>
+
+            <a class="app-sidebar__link @produtosAtivo"
+               asp-controller="Produtos"
+               asp-action="Index">
+                Produtos
+            </a>
+        </div>
+
+        <div class="app-sidebar__group">
+            <span class="app-sidebar__group-title">Administração</span>
+
+            <a class="app-sidebar__link @usuariosAtivo"
+               asp-controller="Usuarios"
+               asp-action="Index">
+                Usuários
+            </a>
+        </div>
+    </nav>
+</aside>
